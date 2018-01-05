@@ -1,0 +1,20 @@
+#!/bin/bash
+
+set -eux
+
+# setup root-writable versioned dirs
+mkdir -p ${SNAP_COMMON}/etc/thelounge/users
+mkdir -p ${SNAP_COMMON}/etc/thelounge/storage
+
+# setup thelounge config
+if [ -e "${SNAP_COMMON}/etc/thelounge/config.js" ]; then
+    echo "thelounge config exists"
+else
+    cp ${SNAP}/config.js ${SNAP_COMMON}/etc/thelounge/config.js
+fi
+
+if [ -e "${SNAP_COMMON}/etc/thelounge/users/_.json" ]; then
+    echo "thelounge user defined config exists"
+else
+    cp ${SNAP}/_.json ${SNAP_COMMON}/etc/thelounge/users/_.json
+fi
