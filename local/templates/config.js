@@ -3,8 +3,8 @@ module.exports = {
     host: "0.0.0.0",
     port: 9000,
     bind: undefined,
-    reverseProxy: false,
-    theme: "example",
+    reverseProxy: true,
+    theme: "default",
     prefetch: true,
     prefetchStorage: true,
     prefetchMaxImageSize: 2048,
@@ -12,12 +12,8 @@ module.exports = {
     lockNetwork: false,
     useHexIp: false,
     webirc: null,
-    logs: {
-        format: "YYYY-MM-DD HH:mm:ss",
-        timezone: "UTC+00:00",
-    },
 
-    maxHistory: 100000,
+    maxHistory: 1000000,
 
     defaults: {
         name: "Freenode",
@@ -33,7 +29,7 @@ module.exports = {
 
     transports: ["polling", "websocket"],
 
-    leaveMessage: "The Lounge - https://thelounge.github.io",
+    leaveMessage: "The Lounge Snap - https://github.com/omnivector-solutions/snap-thelounge",
 
     identd: {
         enable: false,

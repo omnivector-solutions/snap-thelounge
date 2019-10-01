@@ -1,5 +1,5 @@
 name: theloungeirc
-version: '0.1' 
+version: '0.2' 
 summary: theLounge IRC Web Client
 description: |
   TheLounge IRC
@@ -12,14 +12,14 @@ base: core18
 apps:
   thelounge:
     environment:
-      LOUNGE_HOME: $SNAP_COMMON/etc/thelounge
+      THELOUNGE_HOME: $SNAP_COMMON/etc/thelounge
       LC_ALL: C
     daemon: simple
     plugs: [network-bind]
     command: wrappers/thelounge.sh
   thelounge-cli:
     environment:
-      LOUNGE_HOME: $SNAP_COMMON/etc/thelounge
+      THELOUNGE_HOME: $SNAP_COMMON/etc/thelounge
       LC_ALL: C
     plugs: [network-bind]
     command: wrappers/thelounge-cli.sh
@@ -30,12 +30,9 @@ parts:
     plugin: nodejs
     nodejs-version: 12.11.1
     prime:
-      - -snap
       - -snapcraft.yaml
       - -LICENSE
       - -README.md
-      - -node_modules
-      - -package
       - -local
       - -package.json
   wrappers:
