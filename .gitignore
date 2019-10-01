@@ -1,5 +1,7 @@
+node_modules/
 parts/
 prime/
 stage/
 snap/.snapcraft/
 theloungeirc_0.1_amd64.snap
+yarm.lock
